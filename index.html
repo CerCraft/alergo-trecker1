@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AllergoTracker</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"/>
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+</head>
+<body>
+    <!-- Шапка -->
+    <header class="header">
+        <img src="images/logo.png" alt="Logo" class="logo">
+        <h1>Аллерготрекер</h1>
+    </header>
+    
+    <!-- Меню выбора аллергенов -->
+    <section id="select-allergens">
+        <div class="dropdown">
+            <button class="dropbtn">Выберите аллерген ↓</button>
+            <div class="dropdown-content">
+                <a href="#" data-value="birch"><img src="images/birch.png" alt="береза"> Береза</a>
+                <a href="#" data-value="alder"><img src="images/alder.png" alt="ольха"> Ольха</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Контейнер для графика -->
+    <section id="graph-container">
+        <div id="danger-level-graph"></div>
+    </section>
+ <div id="mapid" style="height: 500px; width: 100%;"></div>
+<script src="app.js"></script>
+     
+    
+
+    <!-- Новое: блок с опросником -->
+    <section id="questionnaire-section">
+        <h2>Проходите короткий опрос и получите полезные рекомендации:</h2>
+        <form id="allergy-form">
+            <label for="q1">Какие симптомы вы испытываете?</label><br/>
+            <input type="checkbox" id="symptom1" name="symptoms[]" value="насморк"/> Насморк<br/>
+            <input type="checkbox" id="symptom2" name="symptoms[]" value="заложенность_носа"/> Заложенность носа<br/>
+            <input type="checkbox" id="symptom3" name="symptoms[]" value="слезоточивость"/> Слезоточивость глаз<br/><br/>
+            
+            <label for="q2">Какой ваш возраст?</label><br/>
+            <input type="radio" id="age1" name="age_group" value="до_18"/> До 18 лет<br/>
+            <input type="radio" id="age2" name="age_group" value="18_45"/> 18—45 лет<br/>
+            <input type="radio" id="age3" name="age_group" value="старше_45"/> Старше 45 лет<br/><br/>
+            
+            <label for="q3">Есть ли хронические заболевания дыхательных путей?</label><br/>
+            <input type="radio" id="health1" name="health_status" value="нет"/> Нет хронических болезней<br/>
+            <input type="radio" id="health2" name="health_status" value="астма"/> Астма или бронхит<br/><br/>
+            
+            <button type="submit">Получить рекомендации</button>
+        </form>
+
+        <!-- Блок для вывода рекомендаций -->
+        <div id="recommendations-output"></div>
+    </section>
+
+    <!-- Кнопка поделиться -->
+    <button onclick="shareToSocial()">👇 Перейти в соцсети 👇</button>
+
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
