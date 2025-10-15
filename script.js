@@ -2,12 +2,12 @@ document.addEventListener('DOMContentLoaded', function() {
     // Данные по аллергенам
     const allergensData = {
         birch: {   // берёза
-            dates: ["2023-05-01", "2023-05-02", "2023-05-03"],
-            levels: ["low", "medium", "high"]
+            dates: ["05-01", "05-02", "05-03","05-04","05-05","05-06","05-07","05-08","05-09","05-10","05-11","05-12","05-13","05-14","05-15","05-16","05-17","05-18","05-19","05-20","05-21","05-22","05-23","05-24","05-25","05-26","05-27","05-28","05-29","05-30"],
+            levels: ["low", "medium", "low","low","low","medium","medium","medium","low","low","medium","medium","medium","medium","medium","high","high","high","high","medium","high","high","high","high","high","high","high","medium","high","high"]
         },
         alder: {   // ольха
-            dates: ["2023-05-01", "2023-05-02", "2023-05-03"],
-            levels: ["low", "high", "low"]
+            dates: ["05-01", "05-02", "05-03","05-04","05-05","05-06","05-07","05-08","05-09","05-10","05-11","05-12","05-13","05-14","05-15","05-16","05-17","05-18","05-19","05-20","05-21","05-22","05-23","05-24","05-25","05-26","05-27","05-28","05-29","05-30"],
+            levels: ["low", "medium", "low","medium","low","medium","low","medium","low","medium","low","medium","high","medium","high","high","medium","medium","high","medium","high","high","medium","high","high","medium","high","high","high","high"]
         }
         // Другие аллергены тут
     };
@@ -140,4 +140,5 @@ document.addEventListener('DOMContentLoaded', function() {
             recommendationsOutput.innerHTML = '<p>По вашим данным пока нет рекомендаций.</p>';
         }
     });
+
 });
