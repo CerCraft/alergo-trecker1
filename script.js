@@ -8,6 +8,10 @@ document.addEventListener('DOMContentLoaded', function() {
         alder: {   // ольха
             dates: ["05-01", "05-02", "05-03","05-04","05-05","05-06","05-07","05-08","05-09","05-10","05-11","05-12","05-13","05-14","05-15","05-16","05-17","05-18","05-19","05-20","05-21","05-22","05-23","05-24","05-25","05-26","05-27","05-28","05-29","05-30"],
             levels: ["low", "medium", "low","medium","low","medium","low","medium","low","medium","low","medium","high","medium","high","high","medium","medium","high","medium","high","high","medium","high","high","medium","high","high","high","high"]
+        },
+         dub: {   // дуб
+            dates: ["05-01", "05-02", "05-03","05-04","05-05","05-06","05-07","05-08","05-09","05-10","05-11","05-12","05-13","05-14","05-15","05-16","05-17","05-18","05-19","05-20","05-21","05-22","05-23","05-24","05-25","05-26","05-27","05-28","05-29","05-30"],
+            levels: ["low", "medium", "low","medium","low","medium","low","medium","low","medium","low","medium","high","medium","high","high","medium","medium","high","medium","high","high","medium","high","high","medium","high","high","high","high"]
         }
         // Другие аллергены тут
     };
@@ -88,7 +92,7 @@ document.addEventListener('DOMContentLoaded', function() {
     drawGraph(allergensData["birch"]);
 });
 document.addEventListener('DOMContentLoaded', function() {
-    // Уже существующий код ...
+
 
     // Новые переменные для хранения блоков опроса и результата
     const form = document.getElementById('allergy-form');
