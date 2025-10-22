@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/alergo-tracker1/static/css/main.17187ee0.css",
+    "main.js": "/alergo-tracker1/static/js/main.78d37785.js",
+    "static/js/453.bd31fb1e.chunk.js": "/alergo-tracker1/static/js/453.bd31fb1e.chunk.js",
+    "index.html": "/alergo-tracker1/index.html",
+    "main.17187ee0.css.map": "/alergo-tracker1/static/css/main.17187ee0.css.map",
+    "main.78d37785.js.map": "/alergo-tracker1/static/js/main.78d37785.js.map",
+    "453.bd31fb1e.chunk.js.map": "/alergo-tracker1/static/js/453.bd31fb1e.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.17187ee0.css",
+    "static/js/main.78d37785.js"
+  ]
+}

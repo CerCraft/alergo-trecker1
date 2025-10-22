@@ -1,0 +1,64 @@
+/* src/components/AllergenSelector.css */
+.custom-select {
+  position: relative;
+  width: 250px;
+  margin: 0 auto;
+}
+
+.select-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 15px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background: white;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.select-header img.allergen-img {
+  width: 24px;
+  height: 24px;
+  margin-left: 10px;
+}
+
+.arrow {
+  margin-left: 10px;
+  color: #666;
+}
+
+.select-options {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: white;
+  border: 1px solid #ccc;
+  border-top: none;
+  border-radius: 0 0 6px 6px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  z-index: 10;
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+.select-option {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 15px;
+  cursor: pointer;
+}
+
+.select-option:hover {
+  background-color: #f0f0f0;
+}
+
+.select-option img.allergen-img {
+  width: 24px;
+  height: 24px;
+  margin-left: 10px;
+}

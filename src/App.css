@@ -1,0 +1,481 @@
+/* src/App.css */
+:root {
+  --bg: #0f0c29;
+  --bg-light: #1a173b;
+  --card-bg: #242145;
+  --primary: #8a2be2;
+  --primary-light: #a45deb;
+  --text: #f0f0f0;
+  --text-muted: #b0b0d0;
+  --border: #3a365a;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  line-height: 1.6;
+}
+
+.app {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Шапка */
+.header {
+  text-align: center;
+  margin-bottom: 30px;
+  padding: 20px 0;
+}
+
+.header h1 {
+  font-size: 2.4rem;
+  background: linear-gradient(90deg, var(--primary-light), var(--primary));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  margin-bottom: 16px;
+}
+
+.logo-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.custom-logo {
+  height: 50px;
+  width: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 0 10px rgba(138, 43, 226, 0.4));
+}
+
+/* Выбор */
+.select-container {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  margin: 24px 0;
+  flex-wrap: wrap;
+}
+
+.select-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 220px;
+}
+
+.select-label {
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: var(--text-muted);
+  font-size: 1rem;
+}
+
+.custom-select {
+  width: 100%;
+  padding: 14px 16px;
+  border-radius: 14px;
+  background: var(--card-bg);
+  color: var(--text);
+  border: 2px solid var(--primary);
+  font-size: 1rem;
+  appearance: none;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.custom-select:focus {
+  outline: none;
+  border-color: var(--primary-light);
+  box-shadow: 0 0 0 4px rgba(138, 43, 226, 0.25);
+}
+
+/* График */
+.graph-section {
+  background: var(--card-bg);
+  padding: 24px;
+  border-radius: 18px;
+  margin: 28px 0;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+.graph-section h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: var(--primary-light);
+  font-size: 1.6rem;
+}
+
+.loading-text {
+  text-align: center;
+  color: var(--text-muted);
+  font-style: italic;
+}
+
+.graph {
+  padding: 10px 0;
+}
+
+.bars {
+  display: flex;
+  align-items: flex-end;
+  height: 220px;
+  gap: 6px;
+  padding: 0 10px;
+  border-bottom: 1px solid var(--border);
+}
+
+.bar-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+  min-width: 32px;
+}
+
+.bar {
+  width: 100%;
+  min-height: 6px;
+  border-radius: 6px 6px 0 0;
+  background: linear-gradient(to top, var(--primary), var(--primary-light));
+  box-shadow: 0 3px 8px rgba(138, 43, 226, 0.4);
+  transition: height 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.date {
+  margin-top: 10px;
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+
+/* Карта */
+.map-container {
+  background: var(--card-bg);
+  padding: 24px;
+  border-radius: 18px;
+  margin: 28px 0;
+  text-align: center;
+}
+
+.map-container h3 {
+  color: var(--primary-light);
+  margin-bottom: 16px;
+  font-size: 1.4rem;
+}
+
+.russia-map-placeholder {
+  min-height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: var(--text-muted);
+}
+
+.map-info {
+  margin-bottom: 16px;
+  font-size: 1.1rem;
+}
+
+.map-legend-small {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+/* Опрос и рекомендации */
+.survey-form,
+.recommendation-box {
+  background: var(--card-bg);
+  padding: 24px;
+  border-radius: 18px;
+  margin: 28px 0;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+.survey-form h3,
+.recommendation-box h3 {
+  color: var(--primary-light);
+  text-align: center;
+  margin-bottom: 18px;
+  font-size: 1.4rem;
+}
+
+/* Общие элементы */
+.dot {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  margin-right: 6px;
+  vertical-align: middle;
+}
+
+.dot.active { background: #FF851B; }
+.dot.selected { background: #FF4136; }
+.dot.inactive { background: #BDC3C7; }
+
+/* Адаптив */
+@media (max-width: 768px) {
+  .select-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .header h1 {
+    font-size: 2rem;
+  }
+
+  .bars {
+    height: 180px;
+  }
+
+  .date {
+    font-size: 0.65rem;
+  }
+}
+/* Опрос — вертикальный список */
+.survey-form {
+  background: var(--card-bg);
+  padding: 28px;
+  border-radius: 18px;
+  margin: 28px 0;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+.survey-form h3 {
+  color: var(--primary-light);
+  text-align: center;
+  margin-bottom: 24px;
+  font-size: 1.5rem;
+}
+
+.symptoms-column {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-bottom: 24px;
+}
+
+.symptom-item {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  padding: 12px;
+  border-radius: 12px;
+  transition: background 0.2s;
+}
+
+.symptom-item:hover {
+  background: rgba(138, 43, 226, 0.1);
+}
+
+.symptom-item input {
+  display: none;
+}
+
+.checkmark {
+  width: 22px;
+  height: 22px;
+  border: 2px solid var(--primary);
+  border-radius: 6px;
+  margin-right: 14px;
+  position: relative;
+  flex-shrink: 0;
+  transition: all 0.2s;
+}
+
+.symptom-item input:checked + .checkmark {
+  background: var(--primary);
+  border-color: var(--primary);
+}
+
+.symptom-item input:checked + .checkmark::after {
+  content: '✓';
+  position: absolute;
+  color: white;
+  font-size: 14px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.symptom-label {
+  font-size: 1.1rem;
+  color: var(--text);
+}
+
+.recommend-btn {
+  background: linear-gradient(90deg, var(--primary), var(--primary-light));
+  color: white;
+  border: none;
+  padding: 14px 32px;
+  border-radius: 14px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  display: block;
+  margin: 0 auto;
+  box-shadow: 0 4px 12px rgba(138, 43, 226, 0.3);
+}
+
+.recommend-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(138, 43, 226, 0.4);
+}
+/* Дневник симптомов */
+.diary-section {
+  background: var(--card-bg);
+  padding: 28px;
+  border-radius: 18px;
+  margin: 28px 0;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+.diary-section h3 {
+  color: var(--primary-light);
+  text-align: center;
+  margin-bottom: 16px;
+  font-size: 1.5rem;
+}
+
+.diary-info {
+  text-align: center;
+  color: var(--text-muted);
+  margin-bottom: 20px;
+  font-style: italic;
+}
+
+.diary-entries {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.diary-entry {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+}
+
+.entry-date {
+  font-weight: 600;
+  color: var(--text);
+  min-width: 90px;
+}
+
+.entry-symptoms {
+  flex: 1;
+  color: var(--text-muted);
+  padding: 0 16px;
+}
+
+.allergen-tag {
+  background: rgba(138, 43, 226, 0.2);
+  color: var(--primary-light);
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.diary-btn {
+  background: rgba(138, 43, 226, 0.15);
+  color: var(--primary-light);
+  border: 1px solid var(--primary);
+  padding: 10px 20px;
+  border-radius: 12px;
+  font-size: 1rem;
+  cursor: pointer;
+  display: block;
+  margin: 0 auto;
+  transition: all 0.2s;
+}
+
+.diary-btn:hover {
+  background: rgba(138, 43, 226, 0.25);
+}
+/* Слайдер самочувствия */
+.wellbeing-slider {
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+.wellbeing-slider label {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 1.1rem;
+  color: var(--text);
+}
+
+.slider {
+  width: 100%;
+  max-width: 400px;
+  height: 8px;
+  -webkit-appearance: none;
+  background: var(--border);
+  border-radius: 4px;
+  outline: none;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: var(--primary);
+  cursor: pointer;
+  box-shadow: 0 0 6px rgba(138, 43, 226, 0.6);
+}
+
+.entry-meta {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  margin-top: 6px;
+}
+
+.wellbeing-badge {
+  background: rgba(76, 175, 80, 0.15);
+  color: #66bb6a;
+  padding: 2px 8px;
+  border-radius: 10px;
+  font-size: 0.8rem;
+}
+/* Кнопка удаления */
+.delete-btn {
+  background: none;
+  border: none;
+  color: #ff6b6b;
+  font-size: 1.1rem;
+  cursor: pointer;
+  padding: 4px;
+  border-radius: 6px;
+  transition: background 0.2s;
+  margin-left: auto;
+}
+
+.delete-btn:hover {
+  background: rgba(255, 107, 107, 0.15);
+}
+
+.entry-meta {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  margin-top: 6px;
+}
